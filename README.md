@@ -1,3 +1,5 @@
 # TripleBind
-## Code availability
-The source code will be released publicly upon acceptance of the associated manuscript.
+## Model
+![demo](Model.png)
+## contact
+If you have any questions, please feel free to contact scholarlzw@163.com
