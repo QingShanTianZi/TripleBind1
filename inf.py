@@ -60,12 +60,12 @@ dataset_test_129 = MDataset(
     all_labels_test_129
 )
 
-from Model.Layer4 import ImprovedBaselineATT_MultiScale_BCE
+from Model.Model import Model
 
 # ===================== Evaluate Function =====================
 def evaluate(ckpt_path):
 
-    model = ImprovedBaselineATT_MultiScale_BCE().to(device)
+    model = Model().to(device)
     model.load_state_dict(torch.load(ckpt_path, map_location=device))
     model.eval()
 

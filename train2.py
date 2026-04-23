@@ -20,7 +20,8 @@ from sklearn.model_selection import KFold
 import time
 import numpy as np
 
-from Model.Layer4 import ImprovedBaselineATT_MultiScale_BCE
+
+from Model.Model import Model
 
 # ===================== Seed =====================
 def set_seed(seed):
@@ -111,7 +112,7 @@ for fold, (train_idx, val_idx) in enumerate(kf.split(X_train)):
     criterion = torch.nn.BCEWithLogitsLoss(pos_weight=pos_weight)
 
     # ---------- Model ----------
-    model = ImprovedBaselineATT_MultiScale_BCE().to(device)
+    model = Model().to(device)
     optimizer = optim.Adam(model.parameters(), lr=1e-4)
     scheduler = optim.lr_scheduler.StepLR(optimizer, step_size=5, gamma=0.5)
 
